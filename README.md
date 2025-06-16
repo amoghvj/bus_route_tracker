@@ -14,6 +14,23 @@ npm install
 
 If running MongoDb locally start the server before running.
 
+If running on a Local Network without online deployement, to enable port forwarding for hosting:
+
+    Open Windows Defender Firewall
+    Go to “Advanced Settings” > Inbound Rules
+    Add a New Rule:
+    Type: Port
+    Protocol: TCP
+    Port: 5000 (or whichever port your backend uses)
+    Allow the connection
+    Apply it to Private Networks
+
+To access the backend from other devices, use the ip address of the backend device along with the port it is hosted on
+
+example:
+
+    'http://X.X.X.X:5000/api/...'
+
 ## HTTP REQUEST FORMAT:
 
 (Initialize) POST Requests (localhost:5000):
