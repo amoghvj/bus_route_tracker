@@ -19,7 +19,8 @@ If running MongoDb locally start the server before running.
 (Initialize) POST Requests (localhost:5000):
 
 Route:
-POST http://localhost:5000/api/location/init
+
+    POST http://localhost:5000/api/location/init
 
 Options:
 
@@ -53,8 +54,11 @@ Functionality: Saves the Initial Location of Bus before Trip starts
 
 (Update) POST Requests (localhost:5000):
 Route:
-POST http://localhost:5000/api/location/
+
+    POST http://localhost:5000/api/location/
+
 Options:
+
 Request body:
 
 ```json
@@ -85,9 +89,13 @@ Functionality: Updates the previously stored location
 
 (Track) GET Requests (localhost:3000):
 Route:
-GET http://localhost:5000/api/location
+
+    GET http://localhost:5000/api/location
 
 Options:
+
 Request params:
-http://localhost:5000/api/location/:bus_id
+
+    http://localhost:5000/api/location/:bus_id
+
 Functionality: Find the current location of a bus with the specified id
