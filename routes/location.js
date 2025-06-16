@@ -32,7 +32,7 @@ module.exports = () => {
 
     // DEFAULT /api/location – Update location from Tracker App
     router.post('/', async (req, res) => {
-        const { bus_id, latitude, longitude } = req.body;
+        const { bus_id, latitude, longitude, timestamp } = req.body;
 
         if (!bus_id || !latitude || !longitude) return res.status(400).json({ error: 'Missing data' });
 
