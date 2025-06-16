@@ -29,15 +29,18 @@ To access the backend from other devices, use the ip address of the backend devi
 
 example:
 
+    'http://localhost:5000/api/...'
     'http://X.X.X.X:5000/api/...'
+
+Use localhost instead of the IP address of the backend deviceif on the same device
 
 ## HTTP REQUEST FORMAT:
 
-(Initialize) POST Requests (localhost:5000):
+(Initialize) POST Requests (X.X.X.X:5000):
 
 Route:
 
-    POST http://localhost:5000/api/location/init
+    POST http://X.X.X.X:5000/api/location/init
 
 Options:
 
@@ -69,10 +72,10 @@ Functionality: Saves the Initial Location of Bus before Trip starts
 
 ---
 
-(Update) POST Requests (localhost:5000):
+(Update) POST Requests (X.X.X.X:5000):
 Route:
 
-    POST http://localhost:5000/api/location/
+    POST http://X.X.X.X:5000/api/location/
 
 Options:
 
@@ -104,15 +107,15 @@ Functionality: Updates the previously stored location
 
 ---
 
-(Track) GET Requests (localhost:3000):
+(Track) GET Requests (X.X.X.X:5000):
 Route:
 
-    GET http://localhost:5000/api/location
+    GET http://X.X.X.X:5000/api/location
 
 Options:
 
 Request params:
 
-    http://localhost:5000/api/location/:bus_id
+    http://X.X.X.X:5000/api/location/:bus_id
 
 Functionality: Find the current location of a bus with the specified id
