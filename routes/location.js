@@ -7,7 +7,7 @@ module.exports = () => {
 
     // DEFAULT /api/location/init – Initialize bus location
     router.post('/init', async (req, res) => {
-        const { bus_id, latitude, longitude } = req.body;
+        const { bus_id, latitude, longitude, timestamp } = req.body;
 
         if (!bus_id || !latitude || !longitude) return res.status(400).json({ error: 'Missing data' });
 
@@ -16,7 +16,7 @@ module.exports = () => {
 
             if (exists) return res.status(409).json({ error: 'Bus already initialized' });
 
-            const new_location = new Location({ bus_id, latitude, longitude, timestamp: Date.now() });
+            const new_location = new Location({ bus_id, latitude, longitude, timestamp: timestamp || Date.now() });
             await new_location.save();
 
             res.status(201).json({ message: 'Bus initialized' });
@@ -39,7 +39,7 @@ module.exports = () => {
         try {
             const updated = await Location.findOneAndUpdate(
                 { bus_id },
-                { latitude, longitude, timestamp: Date.now() },
+                { latitude, longitude, timestamp: timestamp || Date.now() },
                 { upsert: false, new: true }
             );
 
