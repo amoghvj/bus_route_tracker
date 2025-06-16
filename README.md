@@ -1,4 +1,4 @@
-# backend
+# Backend
 
 Backend section of the Bus Route Tracker project
 
