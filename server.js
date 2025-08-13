@@ -16,9 +16,17 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI).then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 
-// Import location route
-const locationRoute = require('./routes/location');
-app.use('/api/location', locationRoute());
+// Import bus location route
+const busLocationRoute = require('./routes/bus');
+app.use('/api/bus', busLocationRoute());
+
+// Import bus stop location route
+const busStopLocationRoute = require('./routes/busStop');
+app.use('/api/bus_stop', busStopLocationRoute());
+
+// Import bus stop location route
+const busRoute = require('./routes/busRoute');
+app.use('/api/route', busRoute());
 
 // Start server
 const PORT = process.env.PORT || 5000;
